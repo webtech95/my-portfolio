@@ -1,16 +1,30 @@
+import html5Logo from "/logos/html5.svg";
+import cssLogo from "/logos/css.svg";
+import javascriptLogo from "/logos/javascript.svg";
+import jqueryLogo from "/logos/jquery.svg";
+import reactLogo from "/logos/react.svg";
+import tailwindLogo from "/logos/tailwindcss.svg";
+import bootstrapLogo from "/logos/bootstrap.svg";
+import mongodbLogo from "/logos/mongodb.svg";
+import expressLogo from "/logos/express.svg";
+import nodeLogo from "/logos/nodedotjs.svg";
+import gitLogo from "/logos/git.svg";
+import restApiLogo from "/logos/fastapi.svg";
+
+
 const skills = [
-    { name: 'HTML5', logo: '/logos/html5.svg' },
-    { name: 'CSS3', logo: '/logos/css.svg' },
-    { name: 'JavaScript', logo: '/logos/javascript.svg' },
-    { name: 'JQuery', logo: '/logos/jquery.svg' },
-    { name: 'React.js', logo: '/logos/react.svg' },
-    { name: 'Tailwind CSS', logo: '/logos/tailwindcss.svg' },
-    { name: 'Bootstrap', logo: '/logos/bootstrap.svg' },
-    { name: 'MongoDB', logo: '/logos/mongodb.svg' },
-    { name: 'Express.js', logo: '/logos/express.svg' },
-    { name: 'Node.js', logo: '/logos/nodedotjs.svg' },
-    { name: 'Git & GitHub', logo: '/logos/git.svg' },
-    { name: 'REST API', logo: '/logos/fastapi.svg' },
+    { name: "HTML5", logo: html5Logo },
+    { name: "CSS3", logo: cssLogo },
+    { name: "JavaScript", logo: javascriptLogo },
+    { name: "JQuery", logo: jqueryLogo },
+    { name: "React.js", logo: reactLogo },
+    { name: "Tailwind CSS", logo: tailwindLogo },
+    { name: "Bootstrap", logo: bootstrapLogo },
+    { name: "MongoDB", logo: mongodbLogo },
+    { name: "Express.js", logo: expressLogo },
+    { name: "Node.js", logo: nodeLogo },
+    { name: "Git & GitHub", logo: gitLogo },
+    { name: "REST API", logo: restApiLogo },
 ];
 
 const Skill = () => {

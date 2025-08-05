@@ -3,18 +3,24 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-import img6 from "/apple.png";
+import Ecowear from '/apple.png';
+import chatApp from '/Images/ChatApp.mp4';
+import TodoApp from "/Images/To-Do List.png"
+import portfolio from  "/Images/Portfolio Presentation.png"
+import bakery from "/Images/Brown Modern Bakery Logo.png";
+import YoutubeClone from "/Images/Youtube Clone.mp4";
+
 
 const projects = [
 
     {
-        Image: "/apple.png",
+        Image: Ecowear,
         title: 'EcoWear E-Commerce',
         desc: 'Sustainable store built using React, Tailwind, Node.js, MongoDB. Includes cart, checkout, and dark mode.',
         url: 'https://naimdev.com',
     },
     {
-        Image: "/Images/ChatApp.mp4",
+        Image: chatApp,
         isVideo: true,
         title: 'Chat App',
         desc: 'Real-time chat app built with Node.js, MongoDB, and Socket.io. Includes login, chat rooms, and responsive design..',
@@ -22,25 +28,25 @@ const projects = [
     },
 
     {
-        Image: "/Images/To-Do List.png",
+        Image: TodoApp,
         title: 'Todo App',
         desc: 'Simple todo app using React and Node.js. Supports create, update, delete tasks with clean UI and state handling.',
         url: 'https://your-todo-demo.com',
     },
     {
-        Image:"/Images/Portfolio Presentation.png",
+        Image: portfolio,
         title: 'Web Portfolio',
         desc: 'Personal portfolio built with React and Tailwind. Highlights projects with smooth transitions and mobile-friendly design.',
         url: 'https://webtech95.github.io/WebPage-Portfolio/',
     },
     {
-        Image: "/Images/Brown Modern Bakery Logo.png",
+        Image: bakery,
         title: 'Bakery Website',
         desc: 'Bakery landing page using React, Redux Toolkit, and Tailwind. Features product showcase and responsive layout.',
         url: 'https://your-bakery-site.com',
     },
     {
-        Image: "/Images/Youtube Clone.mp4",
+        Image: YoutubeClone,
         title: 'Youtube Clone',
         desc: 'Modern portfolio using React and Tailwind CSS. Includes project showcase, dark mode, and responsive layout for all screen sizes.',
         url: 'https://webtech95.github.io/youtube-Clone/',
