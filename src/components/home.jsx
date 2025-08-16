@@ -4,7 +4,7 @@ const Home = () => {
 
     return (
         <div className="font-sans bg-gradient-to-br from-gray-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white">
-            <section className="flex flex-col justify-center items-center text-center px-6 py-40 bg-[#F9FAFB] text-[#111827]">
+            <section className="flex flex-col justify-center items-center text-center px-6 py-25 bg-[#F9FAFB] text-[#111827]">
                 <h1 className="text-5xl md:text-7xl font-extrabold mb-4 animate-fade-in-up">
                     Hi, I'm Afzal
                 </h1>

@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className="font-sans bg-white text-black">
             <footer id="contact" className="py-20 px-6 text-black "> 
-                <div className="max-w-xl mx-auto text-center">
+                <div className="mx-auto text-center">
                     <h2 className="text-4xl text-black font-extrabold mb-4">Let's Work Together</h2>
                     <p className="mb-8 text-lg text-black/90">I'm available for freelance projects and full-time roles.</p>
 

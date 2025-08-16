@@ -1,12 +1,10 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
 
-import Ecowear from '/apple.png';
+
+import Ecowear from '/Images/ecowear-logo.png';
 import chatApp from '/Images/ChatApp.mp4';
 import TodoApp from "/Images/To-Do List.png"
-import portfolio from  "/Images/Portfolio Presentation.png"
+import portfolio from "/Images/Portfolio Presentation.png"
 import bakery from "/Images/Brown Modern Bakery Logo.png";
 import YoutubeClone from "/Images/Youtube Clone.mp4";
 
@@ -57,75 +55,54 @@ const projects = [
 const Project = () => {
     return (
         <div className="font-sans bg-white min-h-screen">
-            <section
-                id="projects"
-                className="py-20 px-6 bg-white "
-            >
+            <section id="projects" className="py-20 px-6 bg-white">
                 <h2 className="text-4xl font-bold text-center text-black-700 mb-12">
                     Projects
                 </h2>
 
-                <div className="max-w-6xl mx-auto">
-                    <Swiper
-                        modules={[Autoplay]}
-                        spaceBetween={24}
-                        slidesPerView={1}
-                        loop={true}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                            pauseOnMouseEnter: true,
-                        }}
-                        breakpoints={{
-                            768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 },
-                        }}
-                    >
-                        {projects.map((project, idx) => (
-                            <SwiperSlide key={idx}>
-                                <div className="bg-white text-center p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg transition-all h-full">
-                                    {project.isVideo ? (
-                                        <video
-                                            src={project.Image}
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
-                                            className="w-full h-48 object-cover rounded-md mb-4"
-                                        />
-                                    ) : (
-                                        <img
-                                            src={project.Image}
-                                            alt={project.title}
-                                            className="w-full h-48 object-cover rounded-md mb-4"
-                                        />
-                                    )}
-                                    <h3 className="text-xl font-semibold text-black-900 mb-2">
-                                        {project.title}
-                                    </h3>
-                                    <p className="text-black-600 text-sm mb-4">
-                                        {project.desc}
-                                    </p>
-                                    <a
-                                        href={project.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-block bg-blue-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg transition"
-                                    >
-                                        View Project
-                                    </a>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                <div className="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    {projects.map((project, idx) => (
+                        <div
+                            key={idx}
+                            className="bg-white text-center p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg transition-all h-full"
+                        >
+                            {project.isVideo ? (
+                                <video
+                                    src={project.Image}
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    className="w-full h-48 object-cover rounded-md mb-4"
+                                />
+                            ) : (
+                                <img
+                                    src={project.Image}
+                                    alt={project.title}
+                                    className="w-full h-48 object-cover rounded-md mb-4"
+                                />
+                            )}
+                            <h3 className="text-xl font-semibold text-black-900 mb-2">
+                                {project.title}
+                            </h3>
+                            <p className="text-black-600 text-sm mb-4">
+                                {project.desc}
+                            </p>
+                            <a
+                                href={project.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block bg-blue-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg transition"
+                            >
+                                View Project
+                            </a>
+                        </div>
+                    ))}
                 </div>
             </section>
         </div>
-
-
-
-
     );
 };
+
 
 export default Project;
