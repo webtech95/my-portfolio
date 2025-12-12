@@ -29,7 +29,7 @@ const projects = [
         Image: TodoApp,
         title: 'Todo App',
         desc: 'Simple todo app using React and Node.js. Supports create, update, delete tasks with clean UI and state handling.',
-        url: 'https://your-todo-demo.com',
+        url: 'https://webtech95.github.io/Todo-List/',
     },
     {
         Image: portfolio,
@@ -41,7 +41,7 @@ const projects = [
         Image: bakery,
         title: 'Bakery Website',
         desc: 'Bakery landing page using React, Redux Toolkit, and Tailwind. Features product showcase and responsive layout.',
-        url: 'https://your-bakery-site.com',
+        url: 'https://webtech95.github.io/bakery-portfolio/',
     },
     {
         Image: YoutubeClone,
