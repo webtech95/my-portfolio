@@ -15,7 +15,7 @@ const projects = [
         Image: Ecowear,
         title: 'EcoWear E-Commerce',
         desc: 'Sustainable store built using React, Tailwind, Node.js, MongoDB. Includes cart, checkout, and dark mode.',
-        url: 'https://naimdev.com',
+        url: 'https://ecowear.naimdev.com/',
     },
     {
         Image: chatApp,
