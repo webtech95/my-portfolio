@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projects | Afzal Qureshi</title>
+    <link rel="icon" href="assest/logos/Blue-Gray Circular Logo for Web Tech Hub.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        :root {
+            --primary: #0F172A;
+            --secondary: #020617;
+            --accent: #22D3EE;
+            --accent-light: #67E8F9;
+            --accent-dark: #0EA5E9;
+            --background: #020617;
+            --card: #111827;
+            --text: #E5E7EB;
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+        }
+
+        /* Custom animations */
+        @keyframes floatUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-float-up {
+            animation: floatUp 0.6s ease-out forwards;
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #22D3EE 0%, #0EA5E9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        /* Glowing effect */
+        .glow {
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.1);
+        }
+
+        .glow:hover {
+            box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+        }
+
+        /* Hover card effect */
+        .project-card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(34, 211, 238, 0.3);
+        }
+
+        /* Image zoom effect */
+        .project-image {
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F172A',
+                        secondary: '#020617',
+                        accent: '#22D3EE',
+                        'accent-light': '#67E8F9',
+                        'accent-dark': '#0EA5E9',
+                        background: '#020617',
+                        card: '#111827',
+                        text: '#E5E7EB',
+                        'text-light': '#F8FAFC',
+                        'text-muted': '#94A3B8',
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-secondary text-text min-h-screen">
+    <!-- ================= HEADER ================= -->
+    <header class="sticky top-0 z-50 bg-secondary/95 backdrop-blur-md border-b border-accent/10 py-4">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-text-light hover:text-accent transition-colors">
+                    <img src="assest/logos/Blue-Gray Circular Logo for Web Tech Hub.png" alt="Afzal Web Tech Logo"
+                        class="h-20 w-20 md:h-12 md:w-12 object-contain rounded-full" /> </a>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-text-light hover:text-accent transition-colors">Home</a>
+                    <a href="index.html#about" class="text-text-light hover:text-accent transition-colors">About</a>
+                    <a href="index.html#skills" class="text-text-light hover:text-accent transition-colors">Skills</a>
+                    <a href="projects.html" class="text-accent font-semibold">Projects</a>
+                    <a href="index.html#contact" class="text-text-light hover:text-accent transition-colors">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-accent">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="index.html" class="block py-2 text-text-light hover:text-accent">Home</a>
+                <a href="index.html#about" class="block py-2 text-text-light hover:text-accent">About</a>
+                <a href="index.html#skills" class="block py-2 text-text-light hover:text-accent">Skills</a>
+                <a href="projects.html" class="block py-2 text-accent font-semibold">Projects</a>
+                <a href="index.html#contact" class="block py-2 text-text-light hover:text-accent">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= PROJECTS HERO ================= -->
+    <section class="pt-24 pb-16 px-6 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="gradient-text">My Projects</span>
+                </h1>
+                <p class="text-xl text-text-muted max-w-3xl mx-auto mb-10">
+                    A collection of my recent work showcasing full-stack development, modern design,
+                    and problem-solving through code.
+                </p>
+
+                <!-- Stats -->
+                <div class="flex flex-wrap justify-center gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">4+</div>
+                        <div class="text-text-muted">Projects Built</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">1</div>
+                        <div class="text-text-muted">MERN Projects</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">100%</div>
+                        <div class="text-text-muted">Code Quality</div>
+                    </div>
+                </div>
+
+                <!-- Filter Tags -->
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <button
+                        class="filter-btn px-4 py-2 bg-accent text-primary rounded-full font-semibold transition-all active"
+                        data-filter="all">
+                        All Projects
+                    </button>
+                    <button
+                        class="filter-btn px-4 py-2 bg-card text-text-light rounded-full hover:bg-accent hover:text-primary transition-all"
+                        data-filter="mern">
+                        MERN Stack
+                    </button>
+                    <button
+                        class="filter-btn px-4 py-2 bg-card text-text-light rounded-full hover:bg-accent hover:text-primary transition-all"
+                        data-filter="react">
+                        React
+                    </button>
+                    <button
+                        class="filter-btn px-4 py-2 bg-card text-text-light rounded-full hover:bg-accent hover:text-primary transition-all"
+                        data-filter="fullstack">
+                        Full Stack
+                    </button>
+                    <button
+                        class="filter-btn px-4 py-2 bg-card text-text-light rounded-full hover:bg-accent hover:text-primary transition-all"
+                        data-filter="frontend">
+                        Frontend
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROJECTS GRID ================= -->
+    <section class="py-10 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 - EcoWear -->
+                <div class="project-card bg-card rounded-2xl overflow-hidden border border-accent/10 glow animate-float-up"
+                    data-category="mern fullstack">
+                    <div class="relative h-56 overflow-hidden">
+                        <video src="assest/Images/Ecowear.mp4" class="absolute inset-0 w-full h-full object-cover"
+                            autoplay loop muted playsinline></video>
+                        <div
+                            class="absolute top-4 right-4 px-3 py-1 bg-accent text-primary text-sm font-semibold rounded-full">
+                            MERN Stack
+                        </div>
+                        <!-- Project Image/Video Placeholder -->
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center p-4">
+                                <i class="fas fa-shopping-cart text-4xl text-accent mb-3"></i>
+                                <h4 class="text-text-light font-semibold">E-Commerce Platform</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-bold text-text-light group-hover:text-accent transition-colors">
+                                EcoWear E-Commerce
+                            </h3>
+                            <span class="text-xs px-2 py-1 bg-green-500/10 text-green-400 rounded-full">Live</span>
+                        </div>
+
+                        <p class="text-text-muted text-sm mb-5">
+                            A sustainable fashion e-commerce platform with complete shopping experience,
+                            user authentication, payment integration, and admin dashboard.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">React</span>
+                            <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full">Node.js</span>
+                            <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full">Express</span>
+                            <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs rounded-full">MongoDB</span>
+                            <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs rounded-full">Tailwind</span>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-accent/10">
+                            <a href="https://ecowear.naimdev.com/" target="_blank"
+                                class="flex items-center gap-2 text-accent font-semibold hover:text-accent-light transition-colors group">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="https://github.com/webtech95" target="_blank"
+                                class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Chat App -->
+                <div class="project-card bg-card rounded-2xl overflow-hidden border border-accent/10 glow animate-float-up"
+                    data-category="mern fullstack" style="animation-delay: 0.1s">
+                    <div class="relative h-56 overflow-hidden">
+                        <video src="assest/Images/ChatApp.mp4" class="absolute inset-0 w-full h-full object-cover"
+                            autoplay loop muted playsinline></video>
+                        <div
+                            class="absolute top-4 right-4 px-3 py-1 bg-accent text-primary text-sm font-semibold rounded-full">
+                            Real-time
+                        </div>
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center p-4">
+                                <i class="fas fa-comments text-4xl text-accent mb-3"></i>
+                                <h4 class="text-text-light font-semibold">Chat Application</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-bold text-text-light group-hover:text-accent transition-colors">
+                                Real-time Chat App
+                            </h3>
+                            <span class="text-xs px-2 py-1 bg-yellow-500/10 text-yellow-400 rounded-full">Demo</span>
+                        </div>
+
+                        <p class="text-text-muted text-sm mb-5">
+                            A real-time messaging application with user authentication, private rooms,
+                            file sharing, and live notifications using Socket.io.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">Vite</span>
+                            <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full">Node.js</span>
+                            <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full">Express</span>
+                            <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs rounded-full">MongoDB</span>
+                            <span class="px-3 py-1 bg-red-500/10 text-red-400 text-xs rounded-full">Socket.io</span>
+                            <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs rounded-full">Tailwind</span>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-accent/10">
+                            <a href="https://chatapp.naimdev.com/" target="_blank"
+                                class="flex items-center gap-2 text-accent font-semibold hover:text-accent-light transition-colors group">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Demo</span>
+                            </a>
+                            <a href="https://github.com/webtech95" target="_blank"
+                                class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Portfolio -->
+                <div class="project-card bg-card rounded-2xl overflow-hidden border border-accent/10 glow animate-float-up"
+                    data-category="react frontend" style="animation-delay: 0.2s">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assest/Images/Portfolio Presentation.png" alt="EcoWear Project"
+                            class="absolute inset-0 w-full h-full object-cover" />
+                        <div
+                            class="absolute top-4 right-4 px-3 py-1 bg-accent text-primary text-sm font-semibold rounded-full">
+                            Portfolio
+                        </div>
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center p-4">
+                                <i class="fas fa-user-tie text-4xl text-accent mb-3"></i>
+                                <h4 class="text-text-light font-semibold">Web Portfolio</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-bold text-text-light group-hover:text-accent transition-colors">
+                                Modern Portfolio
+                            </h3>
+                            <span class="text-xs px-2 py-1 bg-green-500/10 text-green-400 rounded-full">Live</span>
+                        </div>
+
+                        <p class="text-text-muted text-sm mb-5">
+                            A responsive portfolio website with smooth animations, dark mode,
+                            project showcase, and contact form built with modern web technologies.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">HTML5</span>
+                            <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs rounded-full">Tailwind</span>
+                            <span
+                                class="px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs rounded-full">JavaScript</span>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-accent/10">
+                            <a href="https://webtech95.github.io/WebPage-Portfolio/" target="_blank"
+                                class="flex items-center gap-2 text-accent font-semibold hover:text-accent-light transition-colors group">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="https://github.com/webtech95" target="_blank"
+                                class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 - YouTube Clone -->
+                <div class="project-card bg-card rounded-2xl overflow-hidden border border-accent/10 glow animate-float-up"
+                    data-category="react frontend" style="animation-delay: 0.5s">
+                    <div class="relative h-56 overflow-hidden">
+                        <video src="assest/Images/Youtube Clone.mp4" class="absolute inset-0 w-full h-full object-cover"
+                            autoplay loop muted playsinline></video>
+                        <div
+                            class="absolute top-4 right-4 px-3 py-1 bg-accent text-primary text-sm font-semibold rounded-full">
+                            UI Clone
+                        </div>
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center p-4">
+                                <i class="fab fa-youtube text-4xl text-accent mb-3"></i>
+                                <h4 class="text-text-light font-semibold">Video Platform</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-bold text-text-light group-hover:text-accent transition-colors">
+                                YouTube UI Clone
+                            </h3>
+                            <span class="text-xs px-2 py-1 bg-green-500/10 text-green-400 rounded-full">Live</span>
+                        </div>
+
+                        <p class="text-text-muted text-sm mb-5">
+                            A YouTube-inspired UI clone with video player, search functionality,
+                            comments section, and responsive layout using React and modern CSS.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">Vite</span>
+                            <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs rounded-full">Tailwind</span>
+                            <span
+                                class="px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">HTML5</span>
+                            <span class="px-3 py-1 bg-red-500/10 text-red-400 text-xs rounded-full">YouTube API</span>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-accent/10">
+                            <a href="https://webtech95.github.io/youtube-Clone/" target="_blank"
+                                class="flex items-center gap-2 text-accent font-semibold hover:text-accent-light transition-colors group">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="https://github.com/webtech95" target="_blank"
+                                class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Load More Button -->
+            <!-- <div class="text-center mt-12">
+                <button id="load-more" class="px-8 py-3 bg-card border-2 border-accent text-accent rounded-full 
+                         font-semibold hover:bg-accent hover:text-primary transition-all duration-300">
+                    Load More Projects
+                    <i class="fas fa-arrow-down ml-2"></i>
+                </button>
+            </div> -->
+
+            <!-- GitHub Stats -->
+            <div class="mt-20 bg-card rounded-2xl p-8 border border-accent/10">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-text-light mb-2">GitHub Contributions</h3>
+                    <p class="text-text-muted">Active development and open-source contributions</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">10+</div>
+                        <div class="text-text-muted">Public Repositories</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">50+</div>
+                        <div class="text-text-muted">Code Commits</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">4</div>
+                        <div class="text-text-muted">Projects Pinned</div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="https://github.com/webtech95" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-primary border border-accent/20 rounded-full 
+                              text-text-light font-semibold hover:bg-accent hover:text-primary transition-all">
+                        <i class="fab fa-github"></i>
+                        View GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA SECTION ================= -->
+    <section class="py-16 px-6 bg-gradient-to-b from-primary to-secondary">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-text-light mb-6">
+                Have a Project in Mind?
+            </h2>
+            <p class="text-text-muted text-lg mb-8 max-w-2xl mx-auto">
+                Let's collaborate to bring your ideas to life with modern web technologies
+                and exceptional user experiences.
+            </p>
+            <a href="index.html#contact" class="inline-flex items-center gap-3 px-8 py-4 bg-accent text-primary font-semibold 
+                      rounded-full hover:bg-accent-light transition-all duration-300 hover:scale-105">
+                <i class="fas fa-paper-plane"></i>
+                Start a Project
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="py-8 px-6 bg-secondary border-t border-accent/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="index.html" class="text-2xl font-bold text-text-light">
+                        Afzal<span class="text-accent">.</span>
+                    </a>
+                    <p class="text-text-muted text-sm mt-2">Full Stack Web Developer</p>
+                </div>
+
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="index.html" class="text-text-muted hover:text-accent transition-colors">Home</a>
+                    <a href="index.html#about" class="text-text-muted hover:text-accent transition-colors">About</a>
+                    <a href="projects.html" class="text-accent font-semibold">Projects</a>
+                    <a href="index.html#contact" class="text-text-muted hover:text-accent transition-colors">Contact</a>
+                </div>
+
+                <div class="flex space-x-4">
+                    <a href="https://github.com/webtech95" target="_blank" class="w-10 h-10 rounded-full bg-primary flex items-center justify-center 
+                              text-text-muted hover:text-accent hover:bg-accent/10 transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://wa.me/+918882342032" target="_blank" class="w-10 h-10 rounded-full bg-primary flex items-center justify-center 
+                              text-text-muted hover:text-accent hover:bg-accent/10 transition-colors">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:webtechhub95@gmail.com" class="w-10 h-10 rounded-full bg-primary flex items-center justify-center 
+                              text-text-muted hover:text-accent hover:bg-accent/10 transition-colors">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-accent/10 text-center">
+                <p class="text-text-muted text-sm">
+                    © 2025 Afzal Qureshi. All projects built with
+                    <span class="text-accent">HTML5</span>,
+                    <span class="text-accent">CSS3</span>,
+                    <span class="text-accent">JavaScript</span>, and
+                    <span class="text-accent">MERN Stack</span>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Filter Projects
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active', 'bg-accent', 'text-primary');
+                    btn.classList.add('bg-card', 'text-text-light');
+                });
+
+                this.classList.add('active', 'bg-accent', 'text-primary');
+                this.classList.remove('bg-card', 'text-text-light');
+
+                // Filter projects
+                const filter = this.dataset.filter;
+                const projects = document.querySelectorAll('.project-card');
+
+                projects.forEach(project => {
+                    if (filter === 'all' || project.dataset.category.includes(filter)) {
+                        project.style.display = 'block';
+                        setTimeout(() => {
+                            project.style.opacity = '1';
+                            project.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        project.style.opacity = '0';
+                        project.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            project.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Load More Projects
+
+        // document.getElementById('load-more').addEventListener('click', function () {
+        //     const button = this;
+        //     button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Loading...';
+        //     button.disabled = true;
+
+        //     setTimeout(() => {
+        //         alert('More projects would be loaded from server in production.');
+        //         button.innerHTML = 'Load More Projects <i class="fas fa-arrow-down ml-2"></i>';
+        //         button.disabled = true;
+        //     }, 1000);
+        // });
+
+        // Animate projects on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add scroll animation for project cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                card.style.transitionDelay = `${index * 0.1}s`;
+            });
+
+            // Trigger animation after a short delay
+            setTimeout(() => {
+                cards.forEach(card => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                });
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

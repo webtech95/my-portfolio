@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Afzal Qureshi | Portfolio</title>
+    <link rel="icon" href="assest/logos/Blue-Gray Circular Logo for Web Tech Hub.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        :root {
+            --primary: #0F172A;
+            --secondary: #020617;
+            --accent: #22D3EE;
+            --accent-light: #67E8F9;
+            --accent-dark: #0EA5E9;
+            --background: #020617;
+            --card: #111827;
+            --text: #E5E7EB;
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --gradient-1: linear-gradient(135deg, #22D3EE 0%, #0EA5E9 100%);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-light);
+        }
+
+        .smooth-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-effect {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(34, 211, 238, 0.1);
+        }
+
+        .hover-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(34, 211, 238, 0.15);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float-animation {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.1) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: rotate(30deg);
+            transition: transform 0.6s;
+        }
+
+        .shine-effect:hover::after {
+            transform: translateX(100%) rotate(30deg);
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F172A',
+                        secondary: '#020617',
+                        accent: '#22D3EE',
+                        'accent-light': '#67E8F9',
+                        'accent-dark': '#0EA5E9',
+                        background: '#020617',
+                        card: '#111827',
+                        text: '#E5E7EB',
+                        'text-light': '#F8FAFC',
+                        'text-muted': '#94A3B8',
+                    },
+                    animation: {
+                        'float': 'float 5s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-secondary text-text overflow-x-hidden">
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-effect py-3">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a href="#home" class="flex items-center smooth-transition hover:scale-105">
+                    <img src="assest/logos/Blue-Gray Circular Logo for Web Tech Hub.png" alt="Afzal Web Tech Logo"
+                        class="h-20 w-20 md:h-12 md:w-12 object-contain rounded-full" />
+                </a>
+
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home"
+                        class="group relative text-text-light hover:text-accent transition-all duration-300">
+                        <span class="relative z-10">Home</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#about"
+                        class="group relative text-text-light hover:text-accent transition-all duration-300">
+                        <span class="relative z-10">About</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#skills"
+                        class="group relative text-text-light hover:text-accent transition-all duration-300">
+                        <span class="relative z-10">Skills</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#projects"
+                        class="group relative text-text-light hover:text-accent transition-all duration-300">
+                        <span class="relative z-10">Projects</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#contact"
+                        class="group relative text-text-light hover:text-accent transition-all duration-300">
+                        <span class="relative z-10">Contact</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#contact"
+                        class="ml-4 px-6 py-2 bg-gradient-to-r from-accent to-accent-dark rounded-full text-primary font-semibold hover:shadow-lg hover:shadow-accent/30 transition-all duration-300">
+                        Hire Me
+                    </a>
+                </nav>
+
+                <button id="menu-btn" class="md:hidden text-accent focus:outline-none">
+                    <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                class="hidden md:hidden mt-4 bg-card rounded-2xl border border-accent/10 animate__animated animate__fadeInDown">
+                <div class="p-4 space-y-2">
+                    <a href="#home"
+                        class="block px-4 py-3 rounded-lg hover:bg-accent/10 hover:text-accent transition-all">Home</a>
+                    <a href="#about"
+                        class="block px-4 py-3 rounded-lg hover:bg-accent/10 hover:text-accent transition-all">About</a>
+                    <a href="#skills"
+                        class="block px-4 py-3 rounded-lg hover:bg-accent/10 hover:text-accent transition-all">Skills</a>
+                    <a href="#projects"
+                        class="block px-4 py-3 rounded-lg hover:bg-accent/10 hover:text-accent transition-all">Projects</a>
+                    <a href="#contact"
+                        class="block px-4 py-3 rounded-lg hover:bg-accent/10 hover:text-accent transition-all">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOME -->
+    <section id="home" class="min-h-screen relative overflow-hidden pt-20">
+        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate__animated animate__fadeInLeft">
+                    <div class="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full mb-6">
+                        <span class="w-2 h-2 bg-accent rounded-full mr-2 animate-pulse"></span>
+                        <span class="text-sm text-accent font-medium">Full Stack Developer</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                        <span class="block text-text-light mb-4 tracking-wide">Hy, I'm</span>
+                        <span class="gradient-text tracking-wide">Afzal Qureshi</span>
+                    </h1>
+
+                    <p class="text-xl text-text-muted mb-8 leading-relaxed">
+                        I build exceptional digital experiences that are fast, accessible, visually appealing, and
+                        responsive.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 mb-10">
+                        <a href="#projects"
+                            class="group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-accent to-accent-dark rounded-full text-primary font-semibold hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 shine-effect">
+                            <span class="relative z-10">View Projects</span>
+                        </a>
+                        <a href="#contact"
+                            class="px-8 py-4 border-2 border-accent rounded-full text-accent font-semibold hover:bg-accent hover:text-primary transition-all duration-300">
+                            Contact Me
+                        </a>
+                    </div>
+
+                    <div class="flex items-center space-x-6">
+                        <div class="text-text-light">
+                            <div class="text-3xl font-bold">1+</div>
+                            <div class="text-sm text-text-muted">Years Experience</div>
+                        </div>
+                        <div class="text-text-light">
+                            <div class="text-3xl font-bold">10+</div>
+                            <div class="text-sm text-text-muted">Projects Completed</div>
+                        </div>
+                        <div class="text-text-light">
+                            <div class="text-3xl font-bold">100%</div>
+                            <div class="text-sm text-text-muted">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative animate__animated animate__fadeInRight">
+                    <div class="relative w-full max-w-lg mx-auto">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-accent to-accent-dark rounded-3xl blur-xl opacity-20">
+                        </div>
+                        <div class="relative bg-card rounded-2xl overflow-hidden border border-accent/15 hover-card">
+                            <div class="p-8">
+                                <div
+                                    class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center">
+                                    <span class="text-4xl font-bold text-primary">AQ</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-center text-text-light mb-2">MERN Stack Developer
+                                </h3>
+                                <p class="text-center text-text-muted mb-6">Passionate about building modern web
+                                    applications</p>
+                                <div class="flex justify-center space-x-4">
+                                    <a href="https://github.com/webtech95"
+                                        class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent hover:text-primary transition-all">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/afzal-web/"
+                                        class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent hover:text-primary transition-all">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-gradient-to-b from-secondary to-primary">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold">ABOUT ME</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-text-light mt-2">Get to Know Me</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-accent to-accent-dark rounded-2xl blur-xl opacity-15 group-hover:opacity-25 transition-opacity">
+                    </div>
+                    <div class="relative bg-card rounded-xl overflow-hidden border border-accent/10 p-8">
+                        <h3 class="text-2xl font-bold text-text-light mb-6">My Journey</h3>
+                        <p class="text-text-muted mb-6">
+                            My journey started with curiosity about how websites work, which quickly turned into a
+                            passion for full-stack development. Over time, I've gained strong hands-on experience with
+                            the <span class="text-accent font-semibold">MERN stack</span> and modern frontend tools.
+                        </p>
+                        <p class="text-text-muted mb-8">
+                            I enjoy building responsive, accessible, and performance-driven applications—from clean
+                            landing pages to complete e-commerce and real-time web apps.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-accent font-semibold group">
+                            Let's Connect
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div
+                        class="bg-card rounded-xl p-6 border border-accent/10 hover:border-accent/30 transition-all hover-card">
+                        <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                            <i class="fas fa-code text-accent text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-text-light mb-2">Clean Code</h4>
+                        <p class="text-sm text-text-muted">Writing maintainable and scalable code</p>
+                    </div>
+                    <div
+                        class="bg-card rounded-xl p-6 border border-accent/10 hover:border-accent/30 transition-all hover-card">
+                        <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                            <i class="fas fa-bolt text-accent text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-text-light mb-2">Fast & Responsive</h4>
+                        <p class="text-sm text-text-muted">Optimized performance across devices</p>
+                    </div>
+                    <div
+                        class="bg-card rounded-xl p-6 border border-accent/10 hover:border-accent/30 transition-all hover-card">
+                        <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                            <i class="fas fa-palette text-accent text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-text-light mb-2">Modern Design</h4>
+                        <p class="text-sm text-text-muted">Creating visually stunning interfaces</p>
+                    </div>
+                    <div
+                        class="bg-card rounded-xl p-6 border border-accent/10 hover:border-accent/30 transition-all hover-card">
+                        <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                            <i class="fas fa-server text-accent text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-text-light mb-2">Full Stack</h4>
+                        <p class="text-sm text-text-muted">End-to-end web application development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-20 bg-secondary">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold tracking-wider">TECHNICAL SKILLS</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-text-light mt-2">My Expertise</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mt-4"></div>
+                <p class="text-text-muted mt-6 max-w-2xl mx-auto">
+                    Proficient in modern web technologies with hands-on experience in full-stack development
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="bg-card rounded-2xl p-8 border border-accent/10 hover:border-accent/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 animate__animated animate__fadeInLeft">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center">
+                            <i class="fas fa-code text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-text-light">Frontend Development</h3>
+                            <p class="text-sm text-text-muted">Client-side technologies</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                                <i class="fab fa-react text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">React.js</h4>
+                                <p class="text-sm text-text-muted">Advanced proficiency with hooks, context, and state
+                                    management</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center">
+                                <i class="fab fa-js-square text-yellow-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">JavaScript (ES6+)</h4>
+                                <p class="text-sm text-text-muted">Modern JavaScript features and best practices</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+                                    class="w-5 h-5" alt="Tailwind CSS">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">Tailwind CSS</h4>
+                                <p class="text-sm text-text-muted">Utility-first CSS framework for rapid UI development
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                                <i class="fab fa-html5 text-orange-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">HTML5 & CSS3</h4>
+                                <p class="text-sm text-text-muted">Semantic markup and modern CSS techniques</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-6 border-t border-accent/10">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs bg-blue-500/10 text-blue-400 rounded-full">Redux</span>
+                            <span class="px-3 py-1 text-xs bg-blue-500/10 text-blue-400 rounded-full">Next.js</span>
+                            <span class="px-3 py-1 text-xs bg-blue-500/10 text-blue-400 rounded-full">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-card rounded-2xl p-8 border border-accent/10 hover:border-accent/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 animate__animated animate__fadeInDown">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-green-500/5 flex items-center justify-center">
+                            <i class="fas fa-server text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-text-light">Backend Development</h3>
+                            <p class="text-sm text-text-muted">Server-side technologies & APIs</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                                <i class="fab fa-node-js text-green-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">Node.js</h4>
+                                <p class="text-sm text-text-muted">Server-side JavaScript runtime environment</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-gray-500/10 flex items-center justify-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                                    class="w-5 h-5 invert" alt="Express.js">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">Express.js</h4>
+                                <p class="text-sm text-text-muted">Minimalist web framework for Node.js</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
+                                <i class="fas fa-exchange-alt text-red-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">RESTful APIs</h4>
+                                <p class="text-sm text-text-muted">Design and implementation of REST APIs</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                                <i class="fas fa-user-shield text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">Authentication</h4>
+                                <p class="text-sm text-text-muted">JWT, OAuth, and session-based auth</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-6 border-t border-accent/10">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs bg-green-500/10 text-green-400 rounded-full">Socket.io</span>
+                            <span class="px-3 py-1 text-xs bg-green-500/10 text-green-400 rounded-full">GraphQL</span>
+                            <span
+                                class="px-3 py-1 text-xs bg-green-500/10 text-green-400 rounded-full">Middleware</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-card rounded-2xl p-8 border border-accent/10 hover:border-accent/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 animate__animated animate__fadeInRight">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 flex items-center justify-center">
+                            <i class="fas fa-database text-purple-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-text-light">Database & Storage</h3>
+                            <p class="text-sm text-text-muted">Data management solutions</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                                    class="w-5 h-5" alt="MongoDB">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">MongoDB</h4>
+                                <p class="text-sm text-text-muted">NoSQL database with document-based storage</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg"
+                                    class="w-5 h-5" alt="Mongoose">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">Mongoose ODM</h4>
+                                <p class="text-sm text-text-muted">Elegant MongoDB object modeling for Node.js</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center">
+                                <i class="fas fa-cloud text-sky-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">MongoDB Atlas</h4>
+                                <p class="text-sm text-text-muted">Cloud database service with automated scaling</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                                <i class="fas fa-chart-bar text-amber-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">Database Design</h4>
+                                <p class="text-sm text-text-muted">Schema design, indexing, and aggregation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-card rounded-2xl p-8 border border-accent/10 hover:border-accent/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 animate__animated animate__fadeInLeft">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-500/5 flex items-center justify-center">
+                            <i class="fas fa-tools text-amber-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-text-light">Tools & Platforms</h3>
+                            <p class="text-sm text-text-muted">Development ecosystem</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-gray-500/10 flex items-center justify-center">
+                                <i class="fab fa-github text-gray-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">Git & GitHub</h4>
+                                <p class="text-sm text-text-muted">Version control and collaborative development</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                                <i class="fas fa-code text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">VS Code</h4>
+                                <p class="text-sm text-text-muted">Primary code editor with extensive extensions</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+                                    class="w-5 h-5" alt="Postman">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">Postman</h4>
+                                <p class="text-sm text-text-muted">API testing and documentation</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-center gap-3 p-3 rounded-lg hover:bg-primary/50 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center">
+                                <i class="fas fa-rocket text-sky-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-light">Deployment</h4>
+                                <p class="text-sm text-text-muted">Vercel, Netlify, Heroku, and AWS basics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-card rounded-2xl p-8 border border-accent/10 hover:border-accent/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 animate__animated animate__fadeInUp">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 flex items-center justify-center">
+                            <i class="fas fa-layer-group text-cyan-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-text-light">Additional Technologies</h3>
+                            <p class="text-sm text-text-muted">Supporting libraries & frameworks</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="p-4 rounded-lg bg-primary/30 border border-accent/5 hover:border-accent/20 transition-all">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-md bg-blue-500/10 flex items-center justify-center">
+                                    <i class="fab fa-bootstrap text-blue-400 text-sm"></i>
+                                </div>
+                                <span class="font-medium text-text-light">Bootstrap</span>
+                            </div>
+                            <p class="text-xs text-text-muted">CSS framework for responsive design</p>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-lg bg-primary/30 border border-accent/5 hover:border-accent/20 transition-all">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-md bg-blue-500/10 flex items-center justify-center">
+                                    <i class="fab fa-js text-blue-400 text-sm"></i>
+                                </div>
+                                <span class="font-medium text-text-light">jQuery</span>
+                            </div>
+                            <p class="text-xs text-text-muted">JavaScript library for DOM manipulation</p>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-lg bg-primary/30 border border-accent/5 hover:border-accent/20 transition-all">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-md bg-purple-500/10 flex items-center justify-center">
+                                    <i class="fas fa-project-diagram text-purple-400 text-sm"></i>
+                                </div>
+                                <span class="font-medium text-text-light">Redux</span>
+                            </div>
+                            <p class="text-xs text-text-muted">State management for React applications</p>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-lg bg-primary/30 border border-accent/5 hover:border-accent/20 transition-all">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-md bg-green-500/10 flex items-center justify-center">
+                                    <i class="fas fa-comments text-green-400 text-sm"></i>
+                                </div>
+                                <span class="font-medium text-text-light">Socket.io</span>
+                            </div>
+                            <p class="text-xs text-text-muted">Real-time, bidirectional communication</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h4 class="text-sm font-semibold text-text-light mb-3">Currently Learning</h4>
+                        <div
+                            class="flex items-center justify-between p-3 rounded-lg bg-gradient-to-r from-accent/10 to-cyan-500/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-md bg-cyan-500/20 flex items-center justify-center">
+                                    <i class="fab fa-microsoft text-cyan-400"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-text-light">TypeScript</h5>
+                                    <p class="text-xs text-text-muted">Static typing for JavaScript</p>
+                                </div>
+                            </div>
+                            <span class="text-xs px-2 py-1 bg-accent/20 text-accent rounded-full">In Progress</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-card rounded-2xl p-8 border border-accent/10 hover:border-accent/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 animate__animated animate__fadeInRight">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 flex items-center justify-center">
+                            <i class="fas fa-cogs text-emerald-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-text-light">Development Practices</h3>
+                            <p class="text-sm text-text-muted">Workflow & methodologies</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="p-4 rounded-lg bg-gradient-to-r from-primary/50 to-emerald-500/5 border border-emerald-500/10">
+                            <h4 class="font-semibold text-emerald-400 mb-2">Responsive Design</h4>
+                            <p class="text-sm text-text-muted">Mobile-first approach with cross-browser compatibility
+                            </p>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-lg bg-gradient-to-r from-primary/50 to-blue-500/5 border border-blue-500/10">
+                            <h4 class="font-semibold text-blue-400 mb-2">Clean Code</h4>
+                            <p class="text-sm text-text-muted">Modular, maintainable, and well-documented code</p>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-lg bg-gradient-to-r from-primary/50 to-amber-500/5 border border-amber-500/10">
+                            <h4 class="font-semibold text-amber-400 mb-2">Performance Optimization</h4>
+                            <p class="text-sm text-text-muted">Code splitting, lazy loading, and bundle optimization</p>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-lg bg-gradient-to-r from-primary/50 to-purple-500/5 border border-purple-500/10">
+                            <h4 class="font-semibold text-purple-400 mb-2">Testing & Debugging</h4>
+                            <p class="text-sm text-text-muted">Unit testing and comprehensive debugging</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="mt-16 bg-gradient-to-r from-card to-primary/50 rounded-2xl p-8 border border-accent/10 animate__animated animate__fadeInUp">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-accent mb-2">100%</div>
+                        <div class="text-text-muted">MERN Stack</div>
+                        <div class="text-sm text-text-muted mt-1">Proficient in entire stack</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-accent mb-2">24/7</div>
+                        <div class="text-text-muted">Learning Mindset</div>
+                        <div class="text-sm text-text-muted mt-1">Continuously upgrading skills</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-20 bg-gradient-to-b from-primary to-secondary">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold">MY WORK</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-text-light mt-2">Featured Projects</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative bg-card rounded-2xl overflow-hidden border border-accent/10 hover-card">
+                    <div class="relative h-48 overflow-hidden rounded-lg">
+                        <video src="assest/Images/Ecowear.mp4" class="absolute inset-0 w-full h-full object-cover"
+                            autoplay loop muted playsinline></video>
+                        <div
+                            class="absolute top-4 right-4 px-3 py-1 bg-accent text-primary text-sm font-semibold rounded-full">
+                            MERN Stack
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-text-light mb-3 group-hover:text-accent transition-colors">
+                            EcoWear E-Commerce
+                        </h3>
+                        <p class="text-text-muted mb-6">
+                            Sustainable fashion store with cart, checkout, and admin dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">React</span>
+                            <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">Node.js</span>
+                            <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="https://ecowear.naimdev.com/" target="_blank"
+                                class="text-accent font-semibold hover:text-accent-light transition-colors">
+                                View Live
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="https://github.com/webtech95"
+                                class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative bg-card rounded-2xl overflow-hidden border border-accent/10 hover-card">
+                    <div class="relative h-48 overflow-hidden">
+                        <video src="assest/Images/ChatApp.mp4" class="absolute inset-0 w-full h-full object-cover"
+                            autoplay loop muted playsinline></video>
+                        <div
+                            class="absolute top-4 right-4 px-3 py-1 bg-accent text-primary text-sm font-semibold rounded-full">
+                            Real-time
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-text-light mb-3 group-hover:text-accent transition-colors">
+                            Chat Application
+                        </h3>
+                        <p class="text-text-muted mb-6">
+                            Real-time messaging app with Socket.io and user authentication.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">Socket.io</span>
+                            <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">Express</span>
+                            <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="https://chatapp.naimdev.com/" target="_blank"
+                                class="text-accent font-semibold hover:text-accent-light transition-colors">
+                                View Live
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="https://github.com/webtech95"
+                                class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative bg-card rounded-2xl overflow-hidden border border-accent/10 hover-card">
+                    <div class="relative h-48 overflow-hidden">
+                        <video src="assest/Images/Youtube Clone.mp4" class="absolute inset-0 w-full h-full object-cover"
+                            autoplay loop muted playsinline></video>
+                        <div
+                            class="absolute top-4 right-4 px-3 py-1 bg-accent text-primary text-sm font-semibold rounded-full">
+                            UI Clone
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-text-light group-hover:text-accent transition-colors">
+                            YouTube UI Clone
+                        </h3>
+
+                        <p class="text-text-muted text-sm mb-5">
+                            A YouTube-inspired UI clone with video player, search functionality,
+                            comments section, and responsive layout using React and modern CSS.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">Vite</span>
+                            <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">Tailwind</span>
+                            <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">YouTube API</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="https://webtech95.github.io/youtube-Clone/" target="_blank"
+                                class="text-accent font-semibold hover:text-accent-light transition-colors">
+                                View Live
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="https://github.com/webtech95"
+                                class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="project.html" target="_blank"
+                    class="inline-flex items-center px-8 py-4 bg-card border border-accent/20 rounded-full text-text-light font-semibold hover:bg-accent hover:text-primary transition-all group">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-20 bg-secondary">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold">MY JOURNEY</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-text-light mt-2">Experience & Education</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mt-4"></div>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-accent/20 hidden lg:block">
+                </div>
+
+                <div class="space-y-12">
+                    <div class="relative lg:grid lg:grid-cols-2 lg:gap-8">
+                        <div class="lg:text-right lg:pr-12 mb-6 lg:mb-0 animate__animated animate__fadeInLeft">
+                            <div
+                                class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold">
+                                2024 – 2025
+                            </div>
+                            <h3 class="text-xl font-bold text-text-light mt-3">Web Developer Intern</h3>
+                            <p class="text-accent">TGC (Training & Development)</p>
+                        </div>
+                        <div class="relative animate__animated animate__fadeInRight">
+                            <div
+                                class="absolute left-0 lg:left-0 top-4 -ml-2 w-4 h-4 bg-accent rounded-full border-4 border-secondary">
+                            </div>
+                            <div class="ml-6 lg:ml-0 bg-card rounded-xl p-6 border border-accent/10">
+                                <p class="text-text-muted">
+                                    Worked on real client projects, built responsive websites, and contributed to
+                                    full-stack applications using React, Node.js, and MongoDB. Improved UI performance
+                                    and fixed production issues.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative lg:grid lg:grid-cols-2 lg:gap-8">
+                        <div class="lg:text-right lg:pr-12 mb-6 lg:mb-0 animate__animated animate__fadeInLeft">
+                            <div
+                                class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold">
+                                2025 – Present
+                            </div>
+                            <h3 class="text-xl font-bold text-text-light mt-3">Freelance Web Developer</h3>
+                            <p class="text-accent">Self-Employed</p>
+                        </div>
+                        <div class="relative animate__animated animate__fadeInRight">
+                            <div
+                                class="absolute left-0 lg:left-0 top-4 -ml-2 w-4 h-4 bg-accent rounded-full border-4 border-secondary">
+                            </div>
+                            <div class="ml-6 lg:ml-0 bg-card rounded-xl p-6 border border-accent/10">
+                                <p class="text-text-muted">
+                                    Designed and developed modern websites and web applications including e-commerce
+                                    platforms, portfolios, and dashboards. Focused on clean UI, responsiveness, and
+                                    performance optimization.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-primary to-secondary">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold">GET IN TOUCH</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-text-light mt-2">Let's Work Together</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-card rounded-2xl p-8 border border-accent/10 animate__animated animate__fadeInUp">
+                        <h3 class="text-2xl font-bold text-text-light mb-6">Contact Information</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <a href="mailto:webtechhub95@gmail.com" target="_blank"
+                                    class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-accent text-xl"></i>
+                                </a>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-text-light">Email</h4>
+                                    <p class="text-text-muted">webtechhub95@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <a href="https://wa.me/+918882342032" target="_blank"
+                                    class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-whatsapp text-accent text-xl"></i>
+                                </a>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-text-light">WhatsApp</h4>
+                                    <p class="text-text-muted">+91 8882342032</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-accent text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-text-light">Location</h4>
+                                    <p class="text-text-muted">India</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-8 border-t border-accent/10">
+                            <h4 class="text-lg font-semibold text-text-light mb-4">Connect with me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/webtech95"
+                                    class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent hover:text-primary transition-all">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/afzal-web/"
+                                    class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent hover:text-primary transition-all">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent hover:text-primary transition-all">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card rounded-2xl p-8 border border-accent/10 animate__animated animate__fadeInDown">
+                    <h3 class="text-2xl font-bold text-text-light mb-6">Send a Message</h3>
+
+                    <form action="https://formsubmit.co/webtechhub95@gmail.com" method="POST" id="contact-form"
+                        class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-text-light mb-2">Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full px-4 py-3 bg-primary border border-accent/20 rounded-lg focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 text-text-light"
+                                placeholder="Your name" required>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-text-light mb-2">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-3 bg-primary border border-accent/20 rounded-lg focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 text-text-light"
+                                placeholder="Your email" required>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-text-light mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full px-4 py-3 bg-primary border border-accent/20 rounded-lg focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 text-text-light"
+                                placeholder="Your message" required></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full px-6 py-4 bg-gradient-to-r from-accent to-accent-dark rounded-lg text-primary font-semibold hover:shadow-lg hover:shadow-accent/30 transition-all duration-300">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-secondary py-12 border-t border-accent/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <a href="#home" class="text-3xl font-bold text-text-light mb-4 block">
+                        AFZAL<span class="text-accent">.</span>
+                    </a>
+                    <p class="text-text-muted mb-4">
+                        Full Stack Developer building modern, responsive web applications with the MERN stack.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/webtech95"
+                            class="text-text-muted hover:text-accent transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/afzal-web/"
+                            class="text-text-muted hover:text-accent transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="mailto:webtechhub95@gmail.com"
+                            class="text-text-muted hover:text-accent transition-colors">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-text-light mb-4">Quick Links</h3>
+                    <div class="space-y-3">
+                        <a href="#home" class="block text-text-muted hover:text-accent transition-colors">Home</a>
+                        <a href="#about" class="block text-text-muted hover:text-accent transition-colors">About</a>
+                        <a href="#skills" class="block text-text-muted hover:text-accent transition-colors">Skills</a>
+                        <a href="#projects"
+                            class="block text-text-muted hover:text-accent transition-colors">Projects</a>
+                        <a href="#contact" class="block text-text-muted hover:text-accent transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-text-light mb-4">Get in Touch</h3>
+                    <div class="space-y-3">
+                        <p class="text-text-muted flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent"></i>
+                            webtechhub95@gmail.com
+                        </p>
+                        <p class="text-text-muted flex items-center">
+                            <i class="fab fa-whatsapp mr-3 text-accent"></i>
+                            +91 8882342032
+                        </p>
+                        <p class="text-text-muted flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-accent"></i>
+                            India
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-accent/10 text-center">
+                <p class="text-text-muted text-sm">
+                    © 2025 Afzal Qureshi. Crafted with <span class="text-accent">❤️</span> using
+                    <span class="text-accent">HTML</span>,
+                    <span class="text-accent">Tailwind CSS</span>, and
+                    <span class="text-accent">JavaScript</span>.
+                </p>
+                <p class="text-text-muted text-xs mt-2">Open to freelance opportunities & full-time roles</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-accent text-primary rounded-full shadow-lg hover:shadow-accent/30 transition-all duration-300 opacity-0 translate-y-10 z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        const icon = document.getElementById("menu-icon");
+
+        menuBtn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+            icon.innerHTML = menu.classList.contains("hidden")
+                ? `<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>`
+                : `<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>`;
+        });
+
+        document.querySelectorAll("#mobile-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.add("hidden");
+                icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>`;
+            });
+        });
+
+        const backToTopBtn = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove("opacity-0", "translate-y-10");
+                backToTopBtn.classList.add("opacity-100", "translate-y-0");
+            } else {
+                backToTopBtn.classList.remove("opacity-100", "translate-y-0");
+                backToTopBtn.classList.add("opacity-0", "translate-y-10");
+            }
+        });
+
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute("href");
+                if (targetId === "#") return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (!name || !email || !message) {
+                e.preventDefault();
+                alert("Please fill in all fields");
+                return;
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate__animated", "animate__fadeInUp");
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: "0px 0px -100px 0px"
+        });
+
+        document.querySelectorAll(".hover-card").forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+
+</html>
