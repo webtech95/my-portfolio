@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selected full-stack and front-end projects by Afzal Qureshi, a MERN developer.">
+    <title>Projects — Afzal Qureshi</title>
+    <link rel="icon" href="assest/logos/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="styles/portfolio.css">
+    <script src="scripts/portfolio.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a class="brand" href="index.html" aria-label="Afzal Qureshi home"><span class="brand-mark"><img
+                        src="assest/logos/logo.png" alt=""></span><span
+                    class="brand-name">Afzal<strong>.</strong></span></a>
+            <ul class="nav-links" data-nav-links id="mobile-navigation">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a class="is-current" href="project.html">Work</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions"><a class="button button--primary button--small" href="index.html#contact">Let's
+                    talk <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><button
+                    class="menu-toggle" type="button" data-menu-toggle aria-label="Toggle menu" aria-expanded="false"
+                    aria-controls="mobile-navigation"><i class="fa-solid fa-bars" aria-hidden="true"></i></button></div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container project-hero-layout">
+                <div class="project-hero-copy reveal">
+                    <p class="breadcrumb"><a href="index.html">Home</a><span
+                            aria-hidden="true">/</span><span>Projects</span></p>
+                    <p class="eyebrow">Selected projects</p>
+                    <h1>Products made to be <span>explored.</span></h1>
+                    <p>From full-stack commerce to focused front-end platforms, these projects reflect the ways I solve
+                        practical problems through clear interfaces and thoughtful implementation.</p>
+                    <div class="project-summary" aria-label="Project summary">
+                        <div><strong>6</strong><span>featured builds</span></div>
+                        <div><strong>2</strong><span>MERN platforms</span></div>
+                        <div><strong>100%</strong><span>responsive design</span></div>
+                    </div>
+                </div>
+                <div class="flow-scene reveal" aria-label="Animated product development flow">
+                    <svg class="flow-routes" viewBox="0 0 480 390" aria-hidden="true">
+                        <path class="flow-route flow-route--one" d="M69 89 C148 89 143 152 207 152"></path>
+                        <path class="flow-route flow-route--two" d="M283 155 C345 155 341 98 410 98"></path>
+                        <path class="flow-route flow-route--three" d="M224 242 C224 304 309 308 362 308"></path>
+                    </svg>
+                    <div class="flow-node flow-node--idea"><i class="fa-regular fa-lightbulb"
+                            aria-hidden="true"></i><span>Idea</span></div>
+                    <div class="flow-node flow-node--build"><i class="fa-solid fa-code"
+                            aria-hidden="true"></i><span>Build</span></div>
+                    <div class="flow-node flow-node--ship"><i class="fa-solid fa-rocket"
+                            aria-hidden="true"></i><span>Launch</span></div>
+                    <div class="flow-window">
+                        <div class="flow-window-bar"><span></span><span></span><span></span>
+                            <p>live-product-preview</p><i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                        </div>
+                        <div class="flow-video"><video src="assest/Images/Researchly.mp4" muted loop autoplay
+                                playsinline preload="metadata" aria-label="Researchly project preview"></video>
+                            <div class="flow-video-copy"><span>Featured interface</span><strong>Researchly</strong>
+                            </div>
+                        </div>
+                        <div class="flow-window-footer"><span><i class="fa-solid fa-circle" aria-hidden="true"></i>
+                                Product in motion</span><span>01 / 06</span></div>
+                    </div>
+                    <div class="flow-status"><span class="flow-status-dot"></span><span>From concept
+                            to<br><strong>working product</strong></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--compact">
+            <div class="container">
+                <div class="filters reveal" aria-label="Filter projects">
+                    <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All
+                        work</button>
+                    <button class="filter-button" type="button" data-filter="mern" aria-pressed="false">MERN
+                        stack</button>
+                    <button class="filter-button" type="button" data-filter="frontend"
+                        aria-pressed="false">Frontend</button>
+                    <button class="filter-button" type="button" data-filter="product" aria-pressed="false">Product
+                        UI</button>
+                </div>
+                <p class="filter-status" data-filter-status aria-live="polite">Showing 6 projects.</p>
+                <div class="projects-grid">
+                    <article class="project-card reveal" data-category="mern product">
+                        <div class="project-media"><video src="assest/Images/Ecowear.mp4" muted loop autoplay
+                                playsinline preload="metadata" aria-label="EcoWear project preview"></video><span
+                                class="project-badge">MERN commerce</span></div>
+                        <div class="project-body">
+                            <p class="project-kicker">E-commerce platform</p>
+                            <h3>EcoWear</h3>
+                            <p>A sustainable fashion store with secure authentication, product discovery, cart and
+                                checkout flows, plus an admin dashboard.</p>
+                            <div class="project-tags">
+                                <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Tailwind</span>
+                            </div>
+                            <div class="project-actions"><a class="text-link"
+                                    href="https://webtech95.github.io/ecowear-e-commerce-/" target="_blank"
+                                    rel="noreferrer">Live site <i class="fa-solid fa-arrow-right"
+                                        aria-hidden="true"></i></a><a class="icon-link"
+                                    href="https://github.com/webtech95" target="_blank" rel="noreferrer"
+                                    aria-label="EcoWear GitHub source"><i class="fa-brands fa-github"
+                                        aria-hidden="true"></i></a></div>
+                        </div>
+                    </article>
+                    <article class="project-card reveal" data-category="mern product">
+                        <div class="project-media"><video src="assest/Images/easybook.mp4" muted loop autoplay
+                                playsinline preload="metadata" aria-label="EasyBook project preview"></video><span
+                                class="project-badge">MERN commerce</span></div>
+                        <div class="project-body">
+                            <p class="project-kicker">Online bookstore</p>
+                            <h3>EasyBook</h3>
+                            <p>An online bookstore with protected user flows, category filters, a shopping cart, order
+                                management, and administration.</p>
+                            <div class="project-tags">
+                                <span>React</span><span>Express.js</span><span>MongoDB</span><span>JWT</span><span>Tailwind</span>
+                            </div>
+                            <div class="project-actions"><a class="text-link"
+                                    href="https://webtech95.github.io/easybook-e-commerce-store/" target="_blank"
+                                    rel="noreferrer">Live site <i class="fa-solid fa-arrow-right"
+                                        aria-hidden="true"></i></a><a class="icon-link"
+                                    href="https://github.com/webtech95/easybook-e-commerce-store" target="_blank"
+                                    rel="noreferrer" aria-label="EasyBook GitHub source"><i class="fa-brands fa-github"
+                                        aria-hidden="true"></i></a></div>
+                        </div>
+                    </article>
+                    <article class="project-card reveal" data-category="frontend product">
+                        <div class="project-media"><video src="assest/Images/Careerboost.mp4" muted loop autoplay
+                                playsinline preload="metadata" aria-label="CareerBoost project preview"></video><span
+                                class="project-badge">Career platform</span></div>
+                        <div class="project-body">
+                            <p class="project-kicker">Career support</p>
+                            <h3>CareerBoost</h3>
+                            <p>An AI-powered career platform that helps people create résumés, explore roles, organize
+                                applications, and build momentum.</p>
+                            <div class="project-tags">
+                                <span>React</span><span>Vite</span><span>Tailwind</span><span>JavaScript</span>
+                            </div>
+                            <div class="project-actions"><a class="text-link"
+                                    href="https://careerboost-gold.vercel.app/" target="_blank" rel="noreferrer">Live
+                                    site <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a
+                                    class="icon-link" href="https://github.com/webtech95/Careerboost" target="_blank"
+                                    rel="noreferrer" aria-label="CareerBoost GitHub source"><i
+                                        class="fa-brands fa-github" aria-hidden="true"></i></a></div>
+                        </div>
+                    </article>
+                    <article class="project-card reveal" data-category="frontend product">
+                        <div class="project-media"><video src="assest/Images/Researchly.mp4" muted loop autoplay
+                                playsinline preload="metadata" aria-label="Researchly project preview"></video><span
+                                class="project-badge">Research product</span></div>
+                        <div class="project-body">
+                            <p class="project-kicker">AI research platform</p>
+                            <h3>Researchly</h3>
+                            <p>A calm, responsive research workspace for discovering, organizing, summarizing, and
+                                managing academic papers.</p>
+                            <div class="project-tags"><span>React</span><span>Vite</span><span>Framer
+                                    Motion</span><span>Tailwind</span></div>
+                            <div class="project-actions"><a class="text-link" href="https://researchly-dun.vercel.app/"
+                                    target="_blank" rel="noreferrer">Live site <i class="fa-solid fa-arrow-right"
+                                        aria-hidden="true"></i></a><a class="icon-link"
+                                    href="https://github.com/webtech95" target="_blank" rel="noreferrer"
+                                    aria-label="Researchly GitHub source"><i class="fa-brands fa-github"
+                                        aria-hidden="true"></i></a></div>
+                        </div>
+                    </article>
+                    <article class="project-card reveal" data-category="frontend product">
+                        <div class="project-media"><img src="assest/Images/Portfolio%20Presentation.png"
+                                alt="Modern Portfolio presentation preview"><span class="project-badge">Personal
+                                brand</span></div>
+                        <div class="project-body">
+                            <p class="project-kicker">Portfolio website</p>
+                            <h3>Modern Portfolio</h3>
+                            <p>A personal portfolio designed to make selected work, technical capabilities, and contact
+                                information easy to explore.</p>
+                            <div class="project-tags">
+                                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Tailwind</span>
+                            </div>
+                            <div class="project-actions"><a class="text-link"
+                                    href="https://webtech95.github.io/WebPage-Portfolio/" target="_blank"
+                                    rel="noreferrer">Live site <i class="fa-solid fa-arrow-right"
+                                        aria-hidden="true"></i></a><a class="icon-link"
+                                    href="https://github.com/webtech95" target="_blank" rel="noreferrer"
+                                    aria-label="Portfolio GitHub source"><i class="fa-brands fa-github"
+                                        aria-hidden="true"></i></a></div>
+                        </div>
+                    </article>
+                    <article class="project-card reveal" data-category="frontend">
+                        <div class="project-media"><video src="assest/Images/Youtube%20Clone.mp4" muted loop autoplay
+                                playsinline preload="metadata" aria-label="YouTube clone project preview"></video><span
+                                class="project-badge">Interface build</span></div>
+                        <div class="project-body">
+                            <p class="project-kicker">Video platform UI</p>
+                            <h3>YouTube UI Clone</h3>
+                            <p>A responsive video-platform experience with familiar browsing, viewing, search, and
+                                comment interactions.</p>
+                            <div class="project-tags">
+                                <span>Vite</span><span>Tailwind</span><span>JavaScript</span><span>YouTube API</span>
+                            </div>
+                            <div class="project-actions"><a class="text-link"
+                                    href="https://webtech95.github.io/youtube-Clone/" target="_blank"
+                                    rel="noreferrer">Live site <i class="fa-solid fa-arrow-right"
+                                        aria-hidden="true"></i></a><a class="icon-link"
+                                    href="https://github.com/webtech95" target="_blank" rel="noreferrer"
+                                    aria-label="YouTube clone GitHub source"><i class="fa-brands fa-github"
+                                        aria-hidden="true"></i></a></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--tint section--compact">
+            <div class="container github-strip reveal">
+                <div>
+                    <h2>Want to see more of the work?</h2>
+                    <p>Explore repositories, commits, and more experiments on GitHub.</p>
+                </div><a class="button button--primary" href="https://github.com/webtech95" target="_blank"
+                    rel="noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Visit GitHub</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>© <span data-current-year></span> Afzal Qureshi. Built with care using the MERN mindset.</p>
+            <div class="footer-links"><a href="index.html#about">About</a><a href="project.html">Projects</a><a
+                    href="index.html#contact">Contact</a><a href="index.html">Home</a></div>
+        </div>
+    </footer>
+    <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top"><i class="fa-solid fa-arrow-up"
+            aria-hidden="true"></i></button>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-ring"></div>
+</body>
+
+</html>
